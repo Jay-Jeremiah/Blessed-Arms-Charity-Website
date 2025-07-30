@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px 30px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            height: 70px;
+            width: 70px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .form-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .form-image img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .input-form {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .footer {
+            background-color: black;
+            padding: 30px 20px 10px;
+            font-family: Arial sans-serif;
+            color: white;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-left .footer-right {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer-image img {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-left li {
+            margin-bottom: 5px;
+        }
+
+        .icons {
+            margin-top: 10px;
+        }
+
+        .icons a {
+            color: #444;
+            margin-right: 16px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .icons a:hover {
+            color: #007bff;
+        }
+
+        .bottom {
+            background-color: #444;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
+            </div>
+
+            <ul class="pages">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="form-image">
+        <img src="/static/images/home.jpg" alt="Children with donations">
+        <section class="input-form">
+            <form action="https://formspree.io/f/xqalbdeb" method="POST">
+                <label>Name:</label>
+                <input type="name" name="Name" required>
+                <label>Email:</label>
+                <input type="email" name="Email" required>
+                <label>Message:</label>
+                <textarea name="Message" required>Enter your message here</textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+   
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-image">
+          <img src="/static/images/Blessedarmslogo.jpg" alt="Logo">
+        </div>
+        <h4>Get in Touch with Us:</h4>
+        <ul>
+          <li>Address: Gayaza Subcounty, Kiwenda</li>
+          <li>Tel: +256-704-115-370</li>
+          <li>Email: blessedarmscharity@gmail.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <p>
+          Or you can reach out to us on:
+        </p>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100093146029432" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/in/matovu-akisam-375bb3221" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/blessed.arms.charity.home" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+        <p>&copy; 2025 | Terms and Conditions | All Rights Reserved</p>
+      </div>
+  </footer>
+</body>
+</html>

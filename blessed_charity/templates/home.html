@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blessed Arms Charity Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: black;
+      padding: 10px 30px;
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 90px;
+    }
+
+    .image1 {
+      position: relative;
+      height: 90vh;
+      background: url('/static/images/people.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* Dark transparent overlay */
+    .image1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5); /* adjust 0.5 to 0.6–0.7 for darker */
+      z-index: 0;
+    }
+
+    .image1-content {
+      position: relative;
+      z-index: 1;
+      max-width: 90%;
+      padding: 20px;
+    }
+
+    .image1 h1 {
+      font-size: 48px;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .image1 p {
+      font-size: 22px;
+      margin-top: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro-container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+
+    .introduction h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .introduction p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+        
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .section-content {
+      flex: 1;
+      min-width: 203px;
+    }
+
+    .section-content h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section-content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .section-image {
+      flex: 1;
+      min-width: 203px;
+    }
+
+    .section-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      height: auto;
+    }   
+
+    .children img {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .elder {
+      padding: 30px 10px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .elder p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+     .elder img {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+    }
+    
+
+    .sub-team-images {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .sub-team-images .individual {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .sub-team-images img {
+      width: 100%;
+      border-radius: 10px;
+      height: auto;
+    }
+
+    .individual pre {
+      font-family: Arial, sans-serif ;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: black;
+      padding: 30px 20px 10px;
+      font-family: Arial sans-serif;
+      color: white;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: left;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .footer-left .footer-right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .footer-image img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .footer-left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-left li {
+      margin-bottom: 5px;
+    }
+
+    .icons {
+      margin-top: 10px;
+    }
+
+    .icons a {
+      color: #444;
+      margin-right: 16px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .icons a:hover {
+      color: #007bff;
+    }
+
+    .bottom {
+      background-color: #444;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .section-image img {
+          max-width: 100%;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-left .footer-right {
+          max-width: 100%;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
+            </div>
+
+            <ul class="pages">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="image1">
+      <div class="image1-content">
+        <h1>Blessed Arms Charity Home</h1>
+        <p>A Safe Haven of Hope for Vulnerable Children</p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="intro-container">
+        <div class="introduction">
+          <h1>INTRODUCTION</h1>
+          <p>
+            At <b>Blessed Arms Charity Home</b>, every child matters. Located in the heart of Gayaza Subcounty, Kiwenda, our home is a safe and loving haven for vulnerable children who need care, support, and a second chance at life.
+          </p>
+
+          <p>
+            We currently provide shelter, education, and emotional support to 23 amazing children including 5 from disadvantaged families. This helps them grow in a nurturing environment filled with hope and compassion.
+          </p>
+
+          <p>
+            Our mission is simple yet powerful: to give every child the love and opportunities they deserve. At Blessed Arms, we believe that kindness can change lives and together, we are building brighter futures, one child at a time.
+          </p>
+        </div>
+      </div>
+
+      <div class="children">
+        <img src="/static/images/home.jpg" alt="Children with donations">
+      </div>
+    </section>
+
+    <section>
+      <div class="elder">
+        <p>
+          Here at Blessed Arms Charity, we are also dedicated to providing essential assistance to elderly people in need, focusing on their most basic yet vital requirements. Our primary goal is to ensure that our elderly friends receive the care and support they deserve, particularly in times of hardships. We provide food, as many struggle to access it.
+        </p>
+
+        <p>
+          These small acts of kindness can have impact on the lives of the elderly. Your contribution will help us to provide more food support individuals and expand our services to reach even more people who require assistance. Together, we can bring joy, comfort and hope to people who need it the most.
+        </p>
+
+        <img src="/static/images/elder.jpg" alt="Elderly support">
+      </div>
+    </section>
+  </main>
+
+  
+
+  <footer class="footer">
+    <!--1st column-->
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-image">
+          <img src="/static/images/Blessedarmslogo.jpg" alt="Logo">
+        </div>
+        <h4>Get in Touch with Us:</h4>
+        <ul>
+          <li>Address: Gayaza Subcounty, Kiwenda</li>
+          <li>Tel: +256-704-115-370</li>
+          <li>Email: <a href="mailto:blessed.arms.charity@gmail.com">blessed.arms.charity@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <p>
+          Or you can reach out to us on:
+        </p>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100093146029432" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/in/matovu-akisam-375bb3221" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/blessed.arms.charity.home" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+        <p>&copy; 2025 | Terms and Conditions | All Rights Reserved</p>
+      </div>
+  </footer>
+</body>
+</html>

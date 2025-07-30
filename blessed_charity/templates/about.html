@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px 30px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            height: 70px;
+            width: 70px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 30px 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .section-content {
+            flex: 1;
+            min-width: 203px;
+        }
+
+        .section-content h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .section-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section-image {
+            flex: 1;
+            min-width: 203px;
+        }
+
+        .section-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .team p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .team2 ul li {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .team-image img {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .sub-team-images {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .sub-team-images .individual {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .sub-team-images img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .individual pre {
+            font-family: Arial, sans-serif ;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: black;
+            padding: 30px 20px 10px;
+            font-family: Arial sans-serif;
+            color: white;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-left .footer-right {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer-image img {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-left li {
+            margin-bottom: 5px;
+        }
+
+        .icons {
+            margin-top: 10px;
+        }
+
+        .icons a {
+            color: #444;
+            margin-right: 16px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .icons a:hover {
+            color: #007bff;
+        }
+
+        .bottom {
+            background-color: #444;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section-image img {
+                max-width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-left .footer-right {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
+            </div>
+
+            <ul class="pages">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section vision-image">
+        <div class="section-content">
+            <h2>Our Vision</h2>
+            <p>
+                To establish a society where underpriviledged children have access to safe, affordable housing and can reach their full potenetial, ultimately creating a world free from poverty, homelessness, and inequality, where the children can live with dignity and purpose. 
+            </p>
+
+            
+        </div>
+
+        <div class="section-image">
+            <img src="/static/images/people.jpg" alt="Vision Statement">
+        </div>
+    </section>
+
+    <section class="section mission-image">
+        <div class="section-content">
+            <h2>Our Mission</h2>
+            <p>
+                To offer a safe, nurturing environment where these children can grow, learn and thrive. We believe every child deserves acces to basic necessities, education, and love.  At Blessed Arms Charity Home, we're commited to making a positive impact in the lives of these young ones.
+            </p>
+        </div>
+
+        <div class="section-image">
+            <img src="/static/images/mission.jpg" alt="Mission Statement">
+        </div>
+    </section>
+
+    <section class="team">
+        <h1>Meet Our Dedicated Team</h1>
+        <p>
+            At <strong>Blessed Arms Charity Home,</strong> we are deeply grateful for the unwavering dedication and compassion of our incredible team. Day in and day out, these selfless individuals go above and beyond to provide love, care, and support to the children who call our home their own.
+        </p>
+
+        <p>
+            Our team is the heartbeat of our mission who work tirelessly to ensure that every child feels safe, nurtured, and valued. Whether it is through offering emotional support, guiding educational journeys, or simply sharing a warm smile, each team member plays a vital role in shaping brighter futures for the children in our care.
+        </p>
+
+        <p>
+            We celebrate and honor their commitment, their patience, and the countless ways they pour their hearts into creating a home full of hope, healing, and happiness.
+        </p>
+
+        <div class="team-image">
+            <img src="/static/images/team.jpg" alt="Team Members">
+        </div>
+
+        <div class="team2">
+            <p>
+                Our Team includes:
+            
+                <ul>
+                    <li>Mrs. Katende:    Caretaker</li>
+                    <li>Mrs. Nakawuma:     Caretaker</li>
+                </ul>
+            
+            <p>
+                These two amazing women are more than just caretakers, they are like mothers to our children. With love, patience, and kindness, they care for each child as their own. Every day, they make sure the children are safe, happy, and growing up in a warm, loving home. We are so grateful for their big hearts and the joy they bring to Blessed Arms Charity Home.    
+            </p>
+                
+        </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-image">
+          <img src="/static/images/Blessedarmslogo.jpg" alt="Logo">
+        </div>
+        <h4>Get in Touch with Us:</h4>
+        <ul>
+          <li>Address: Gayaza Subcounty, Kiwenda</li>
+          <li>Tel: +256-704-115-370</li>
+          <li>Email: blessedarmscharity@gmail.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <p>
+          Or you can reach out to us on:
+        </p>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100093146029432" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://linkedin.com/in/matovu-akisam-375bb3221" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/blessed.arms.charity.home" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+        <p>&copy; 2025 | Terms and Conditions | All Rights Reserved</p>
+      </div>
+  </footer>
+</body>
+</html>
