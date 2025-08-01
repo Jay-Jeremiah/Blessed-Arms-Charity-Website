@@ -278,14 +278,36 @@
           text-align: center;
         }
 
+        .menu-toggle {
+          display: block;
+        }
+
         nav ul {
           flex-direction: column;
           gap: 10px;
         }
 
+        nav ul.pages {
+          display: none;
+          flex-direction: column;
+          gap: 15px;
+          background-color: black;
+          position: absolute;
+          top: 60px;
+          right:30px;
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        nav ul.pages.show {
+          display: flex;
+        }
+
         nav ul li a {
           margin-right: 0;
         }
+
+
 
         .section {
           flex-direction: column;
@@ -307,6 +329,16 @@
         }
     }
   </style>
+  <script>
+    const toggle = document.querySelector('.menu-toggle'
+    );
+
+    const menu = document.querySelector('nav.ul.pages')
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show')
+    });
+  </script>
 </head>
 <body>
 
@@ -409,5 +441,6 @@
         <p>&copy; 2025 | Terms and Conditions | All Rights Reserved</p>
       </div>
   </footer>
+  
 </body>
 </html>
