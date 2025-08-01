@@ -29,6 +29,13 @@
             width: 70px;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -42,7 +49,17 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
+            margin-right: 90px;
         }
+
+        nav ul li a:hover{
+            text-decoration: underline;
+            background-color: #666;
+            border-radius: 5px;
+            padding:  5px;
+            transition: .53s;
+        }
+
 
         main {
             padding: 40px;
@@ -164,6 +181,10 @@
                 <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
             </div>
 
+            <div class="menu-toggle">
+                <i class="fas fa-bar"></i>
+            </div>
+
             <ul class="pages">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
@@ -203,7 +224,7 @@
         <ul>
           <li>Address: Gayaza Subcounty, Kiwenda</li>
           <li>Tel: +256-704-115-370</li>
-          <li>Email: blessedarmscharity@gmail.com</li>
+          <li>Email: <a href="mailto:blessed.arms.charity@gmail.com">blessed.arms.charity@gmail.com</a></li>
         </ul>
       </div>
 
