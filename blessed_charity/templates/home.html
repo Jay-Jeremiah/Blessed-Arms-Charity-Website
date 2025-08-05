@@ -310,8 +310,6 @@
           margin-right: 0;
         }
 
-
-
         .section {
           flex-direction: column;
           text-align: center;
@@ -354,24 +352,7 @@
     </nav>
   </header>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('nav-pages');
-    const icon = toggle.querySelector("i");
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-
-      //icon between bars and X
-      if (menu.classList.contains('show')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
-  </script>
+  
 
   <main>
     <section class="image1">
@@ -453,5 +434,23 @@
       </div>
   </footer>
   
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-pages');
+    const icon = toggle.querySelector("i");
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+
+      //icon between bars and X
+      if (menu.classList.contains('show')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
 </body>
 </html>
