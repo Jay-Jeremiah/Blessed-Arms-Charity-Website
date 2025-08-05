@@ -14,6 +14,7 @@
         nav {
             background-color: black;
             padding: 10px 30px;
+            position: relative;
         }
 
         .nav-container {
@@ -27,6 +28,15 @@
         .logo img {
             height: 70px;
             width: 70px;
+        }
+
+        .menu-toggle {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            display: none;
+            background-color: transparent;
+            border: none;
         }
 
         nav ul {
@@ -201,6 +211,36 @@
         }
 
         @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 1001;
+            }
+
+            nav ul.pages {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 30px;
+                background-color: black;
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+                border-radius: 8px;
+                z-index: 1000;
+            }
+
+            nav ul.pages.show{
+                display: flex;
+            }
+
+            nav ul li a {
+                margin-right: 0;
+            }
+
             .section {
                 flex-direction: column;
                 text-align: center;
@@ -230,7 +270,11 @@
                 <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
             </div>
 
-            <ul class="pages">
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="pages" id="nav-pages">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
@@ -334,5 +378,23 @@
         <p>&copy; 2025 | Terms and Conditions | All Rights Reserved</p>
       </div>
   </footer>
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-pages');
+    const icon = toggle.querySelector("i");
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+
+      //icon between bars and X
+      if (menu.classList.contains('show')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
 </body>
 </html>
