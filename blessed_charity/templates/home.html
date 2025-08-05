@@ -13,6 +13,7 @@
     nav {
       background-color: black;
       padding: 10px 30px;
+      position: relative;
     }
 
     .nav-container {
@@ -29,10 +30,12 @@
     }
 
     .menu-toggle {
-      display: none;
       font-size: 28px;
       color: white;
       cursor: pointer;
+      display:none;
+      background-color: transparent;
+      border: none;
     }
 
     nav ul {
@@ -62,7 +65,7 @@
     .image1 {
       position: relative;
       height: 100vh;
-      background: url('/static/images/Charity2.jpg') no-repeat center center/cover;
+      background: url('/static/images/Homepic.jpeg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -273,30 +276,30 @@
 
     @media (max-width: 768px) {
         .nav-container {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
+          flex-wrap: wrap;
         }
 
         .menu-toggle {
           display: block;
+          z-index: 1001;
         }
 
-        nav ul {
+        /* nav ul {
           flex-direction: column;
-          gap: 10px;
-        }
+          gap: 10px; */
+        /* } */
 
         nav ul.pages {
           display: none;
-          flex-direction: column;
-          gap: 15px;
-          background-color: black;
           position: absolute;
           top: 60px;
           right:30px;
+          background-color: black;
+          flex-direction: column;
+          gap: 15px;
           padding: 20px;
           border-radius: 8px;
+          z-index: 1000;
         }
 
         nav ul.pages.show {
@@ -329,17 +332,6 @@
         }
     }
   </style>
-  <script>
-    const toggle = document.querySelector('.menu-toggle'
-    );
-
-    const menu = document.querySelector('nav.ul.pages')
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show')
-    });
-  </script>
-</head>
 <body>
 
   <header>
@@ -349,11 +341,11 @@
                 <img src="/static/images/Blessedarmslogo.jpg" alt="Blessed Arms Logo">
             </div>
 
-            <div class="menu-toggle">
-              <i class="fas fa-bar"></i>
+            <div class="menu-toggle" id="menu-toggle">
+              <i class="fas fa-bars"></i>
             </div>
 
-            <ul class="pages">
+            <ul class="pages" id="nav-pages">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
@@ -361,6 +353,25 @@
         </div>
     </nav>
   </header>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-pages');
+    const icon = toggle.querySelector("i");
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+
+      //icon between bars and X
+      if (menu.classList.contains('show')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
 
   <main>
     <section class="image1">
