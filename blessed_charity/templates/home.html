@@ -64,7 +64,7 @@
 
         .image1 {
             position: relative;
-            height: 110vh;
+            min-height: 102vh;
             background: url('/static/images/Homepic.jpeg') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -119,6 +119,12 @@
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 16px;
+        }
+
+        .children {
+            padding: 30px 10px;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .children img {
@@ -240,6 +246,21 @@
             nav ul li a {
                 margin-right: 0;
             }
+
+           .image1 {
+                background: url('/static/images/Charity2.jpg') no-repeat;
+                background-position: top center;
+                background-size: cover;
+                min-height: 100vh;
+           }
+
+           .children img {
+            max-width: 100%;
+           }
+
+           .elder img {
+            max-width: 100%;
+           }
 
             .footer-content {
                 flex-direction: column;
