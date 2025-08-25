@@ -166,12 +166,34 @@
             line-height: 1.6;
         }
 
-        .donate img {
+        .donate-image {
+            position: relative;
             width: 100%;
             max-width: 800px;
             margin: 20px auto;
-            display: block;
+            display: inline-block;
             border-radius: 10px;
+        }
+
+        .donate-image img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .donate-image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:rgba(0, 123, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .footer {
