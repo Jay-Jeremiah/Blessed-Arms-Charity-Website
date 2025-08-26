@@ -192,7 +192,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-            opacity: 0;
+            opacity: 0.8;
             transition: opacity 0.4s ease;
         }
 
@@ -200,20 +200,27 @@
             opacity: 1;
         }
 
+
+
         .donate-button {
-            background-color: #007bff;
-            border: white;
-            color: white;
+            background-color: #f9f930;
+            color: black;
+            cursor: pointer;
             font-size: 20px;
             font-weight: bold;
             padding: 14px 28px;
-            border-radius: 8px; 
+            border-radius: 8px;
+            border: none; 
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .donate-btn:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .donate-button a {
+            text-decoration: none;
+            color: black;
         }
 
         .footer {
@@ -438,7 +445,9 @@
                     <img src="/static/images/children feeding.jpg" alt="Children Feeding">
 
                     <div class="overlay">
-                        <a href="{{ url_for('donate') }}" class="donate-button">Donate</a>
+                       <button class="donate-button">
+                            <a href="{{ url_for('donate') }}">Donate</a>
+                       </button>
                     </div>
                 </div>
             </div>
