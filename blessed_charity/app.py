@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for,jsonify
 # import psycopg2.
-import requests
-from dotenv import load_dotenv
+# import requests
+# from dotenv import load_dotenv
 
 
 app = Flask(__name__)
