@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for,jsonify
-import psycopg2
+# import psycopg2.
 import requests
 from dotenv import load_dotenv
 
